@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial sans-serif;
+}
+
+header{
+    padding: 0;
+    margin: 0;
+    background: #1240AB;
+    height: 100px;
+    display: flex;
+}
+
+input{
+    border-radius: 5px;
+    border-style: none;
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+    color: #1240AB;
+    opacity: 0.5;
+}
+
+textarea{
+    border-style: none;
+    resize: none;
+    border-radius: 5px;
+    width: 500px;
+    opacity: 0.5;
+}
+
+.submitButton{
+    background: #408AD2;
+    border-style: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    float: right;
+}
+
+.clearFix{
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+
+.logo{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    height: 75px;
+    width: 100px;
+    float: left;
+}
+
+.head{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: inline;
+}
+
+.logIn{
+    text-decoration: none;
+    float: right;
+    margin: 35px 0;
+    padding: 0;
+    font-size: 20px;
+    color: white;
+}
+
+.name{
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: normal;
+    margin-top: 25px;
+    float: left;
+}
+
+.formSection{
+    background: url("../img/DW5RmwgWkAEmDzh.jpg") no-repeat ;
+    height: 600px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-size: cover;
+}
+
+.form{
+    padding-top: 50px;
+    width: 500px;
+    margin-left:100px ;
+}
+
+.comments{
+    height: 500px;
+    background: #D6D6D6;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.comment{
+    margin: 20px 50px;
+    height: 50px;
+    background-color: white;
+    opacity: 0.5;
+
+}
+
+.counter{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.counter h2{
+    padding-top: 10px;
+    margin: 0;
+    padding-right: 20px;
+    color: #04396C;
+}
+.list{
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+}
