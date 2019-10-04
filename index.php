@@ -12,75 +12,92 @@
 
 </head>
 <body>
-    <header >
-        <div class="head">
-          <img class="logo" src="img/logo.png" alt="book">
-            <h1 class="name" >Guest book</h1>
-            <a class="logIn" href="#">Log in</a>
-        </div>
-    </header>
+<header>
+    <div class="head">
+        <img class="logo" src="img/logo.png" alt="book">
+        <h1 class="name">Guest book</h1>
+        <a class="logIn" href="#">Log in</a>
+    </div>
+</header>
 
-    <div class="formSection">
-        <form class="form" action="" method="post">
-            <h2>Name:</h2>
-            <p><input name="userName" type="text" max="30" title="обязательное поле" ></p>
+<div class="formSection">
+    <form class="form" action="" method="post">
+        <h2>Name:</h2>
+        <div class="inputContainer">
+            <input name="userName" type="text" max="30" title="обязательное поле"
+                   value=<?php if (isset($_SESSION['tempFieldOne'])) echo $_SESSION['tempFieldOne'];
+                   unset($_SESSION['tempFieldOne']) ?>>
             <?php
-            if (isset($_SESSION['status']))
-            if(!$_SESSION['status']):  ?>
+            if (isset($_SESSION['statusFieldOne']))
+                if (!$_SESSION['statusFieldOne']): unset($_SESSION['statusFieldOne']) ?>
+                    <img class="requireImgName" src="img/required%20field.png" alt="required">
+                <?php endif ?>
+        </div>
+        <h2 >Email:</h2>
+        <input class="email" type="text" maxlength="30" title="обязательное поле">
+        <div class="inputContainer">
+            <textarea name="textarea" maxlength="1000" cols="30" rows="10"  ><?php  if (isset($_SESSION['tempFieldTwo'])) echo $_SESSION['tempFieldTwo'];   unset($_SESSION['tempFieldTwo'])?></textarea>
+            <?php
+            if (isset($_SESSION['statusFieldTwo']))
+                if (!$_SESSION['statusFieldTwo']): unset($_SESSION['statusFieldTwo']) ?>
+                    <img class="requireImgTextarea" src="img/required%20field.png" alt="required">
+                <?php endif ?>
+        </div>
+        <p>
+            <button name="subButton" class="submitButton" type="submit">Отправить</button>
+        </p>
+    </form>
+</div>
 
-                <p>test</p>
+<div class="comments">
+    <div class="counter"><h2>Comments: 0</h2></div>
 
-            <?php endif?>
-            <h2>Email:</h2>
-            <p><input type="text" maxlength="30" title="обязательное поле"  ></p>
-            <textarea name="comment" id="" maxlength="1000" cols="30" rows="10"  > </textarea>
-            <p><button name="subButton" class="submitButton" type="submit">Отправить</button></p>
-        </form>
-    </div>
+    <?php
+    require_once("php/functions.php");
+    getCommit();
+    ?>
+    <ul class="list">
+        <li>
+            <div class="comment">
 
-    <div class="comments" >
-        <div class="counter"><h2>Comments: 0</h2></div>
+                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 
-        <?php
-        require_once("php/functions.php");
-        getCommit();
-?>
-      <ul class="list">
-          <li>
-              <div class="comment">
+            </div>
+        </li>
 
-                  wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        <li>
+            <div class="comment">
 
-              </div>
-          </li>
-
-          <li>
-              <div class="comment">
-
-                      ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                      ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                      ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
 
 
-              </div>
-          </li>
-          <li>
-              <div class="comment">
-                  <p>
-                      ewqfrfg
-                  </p>
-              </div>
-          </li>
-          <li>
-              <div class="comment">
-                  <p>
-                      ewqfrfg
-                  </p>
-              </div>
-          </li>
+            </div>
+        </li>
+        <li>
+            <div class="comment">
+                <p>
+                    ewqfrfg
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="comment">
+                <p>
+                    ewqfrfg
+                </p>
+            </div>
+        </li>
 
-      </ul>
-    </div>
+    </ul>
+</div>
 
 
 </body>

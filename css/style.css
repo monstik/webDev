@@ -26,7 +26,7 @@ textarea{
     border-style: none;
     resize: none;
     border-radius: 5px;
-    width: 500px;
+    width: 400px;
     opacity: 0.5;
 }
 
@@ -127,4 +127,22 @@ textarea{
     margin: 50px 0;
     padding: 0;
     list-style: none;
+}
+
+.requireImgName{
+
+    margin-left: 5px;
+    display: initial;
+}
+.inputContainer{
+    display: flex;
+}
+
+.requireImgTextarea{
+    width: auto ;
+    height: 20px;
+}
+
+.email{
+    margin-bottom: 20px;
 }
