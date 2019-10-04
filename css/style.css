@@ -104,9 +104,10 @@ textarea{
 
 .comment{
     margin: 20px 50px;
-    height: 50px;
+    padding: 10px;
     background-color: white;
     opacity: 0.5;
+    word-wrap: break-word;
 
 }
 
