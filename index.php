@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guest book</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <header >
@@ -20,16 +23,28 @@
     <div class="formSection">
         <form class="form" action="" method="post">
             <h2>Name:</h2>
-             <p><input type="text" max="30" title="обязательное поле" required></p>
+            <p><input name="userName" type="text" max="30" title="обязательное поле" ></p>
+            <?php
+            if (isset($_SESSION['status']))
+            if(!$_SESSION['status']):  ?>
+
+                <p>test</p>
+
+            <?php endif?>
             <h2>Email:</h2>
-            <p><input type="text" maxlength="30" title="обязательное поле" ></p>
-            <textarea name="comment" id="" maxlength="1000" cols="30" rows="10"> </textarea>
-             <p><button class="submitButton" type="submit">Отправить</button></p>
+            <p><input type="text" maxlength="30" title="обязательное поле"  ></p>
+            <textarea name="comment" id="" maxlength="1000" cols="30" rows="10"  > </textarea>
+            <p><button name="subButton" class="submitButton" type="submit">Отправить</button></p>
         </form>
     </div>
 
     <div class="comments" >
         <div class="counter"><h2>Comments: 0</h2></div>
+
+        <?php
+        require_once("php/functions.php");
+        getCommit();
+?>
       <ul class="list">
           <li>
               <div class="comment">
