@@ -54,13 +54,21 @@
 
     <?php
     require_once("php/functions.php");
-    getCommit();
+
+   checkForm();
+
+
+
+
     ?>
     <ul class="list">
         <li>
             <div class="comment">
-
-                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+                <h2>Admin:</h2>
+                <p>Admin wqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                    ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                    ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg </p>
+                <p class="data">  <?php echo date("d.m.Y H:i") ?>  </p>
 
             </div>
         </li>
@@ -68,15 +76,7 @@
         <li>
             <div class="comment">
 
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
-                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg
+                ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewqfrfg ewq
 
 
             </div>
