@@ -55,7 +55,7 @@
     <?php
     require_once("php/functions.php");
 
-   checkForm();
+   checkForm("data/data.txt");
 
 
 

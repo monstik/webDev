@@ -1,12 +1,12 @@
 <?php
 
-function checkForm()
+function checkForm($fileName)
 {
     if (isset($_POST['subButton'])) {
         if (!empty(trim($_POST['userName'])) && !empty(trim($_POST['textarea']))) {
             $_SESSION['statusFieldOne'] = true;
             header('Location: index.php');
-            readMessage();
+            readMessage($fileName);
         } else {
 
             if (!empty(trim($_POST['userName']))) {
@@ -28,10 +28,14 @@ function checkForm()
     }
 }
 
-function readMessage(){
+function readMessage($fileName){
     $tempMesage = $_POST['userName'] . "===" . $_POST['textarea'] . "===" . date("d.m.Y H:i") . "\n" . "***" . "\n";
    //перед тем как записать файл нужно будет написать проверку на вредоносный код
-    file_put_contents("data/data.txt", "$tempMesage", FILE_APPEND);
+    file_put_contents($fileName, "$tempMesage", FILE_APPEND);
+}
+
+function readData(){
+
 }
 
 ?>
