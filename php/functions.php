@@ -8,17 +8,7 @@ function readMessage($fileName){
     file_put_contents($fileName, "$tempMesage", FILE_APPEND);
 }
 
-function readData($fileName){
-    $tempData = file_get_contents($fileName);
-    $tempData = str_replace("\n", "", $tempData);
-    $tempData =  explode("***", $tempData);
-    array_pop($tempData);
-    $messages = array();
-    foreach ($tempData as $datum) {
-       $messages[] = mb_split("===", $datum);
-    }
-   return $messages;
-}
+
 
 function displayMessages($messages){
     $messages = array_reverse($messages);
