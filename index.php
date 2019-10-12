@@ -53,9 +53,24 @@
     <div class="counter"><h2>Comments: 0</h2></div>
 
     <?php
-    require_once("php/functions.php");
+    use php\classes\Form;
 
-   checkForm("data/data.txt");
+    function autoload($class){
+        $file = __DIR__ . "/{$class}.php";
+        if (file_exists($file)) {
+            require_once "$file";
+        }
+    }
+
+    spl_autoload_register("autoload");
+
+    require_once("php/functions.php");
+    $Test = new Form();
+    if ($Test->checkForm()){
+        file_put_contents("data/data.txt", "{$Test->getMessage()}", FILE_APPEND);
+
+    }
+  // checkForm("data/data.txt");
 
 
 
