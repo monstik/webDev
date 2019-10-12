@@ -26,17 +26,19 @@
         <div class="inputContainer">
             <input name="userName" type="text" max="30" title="обязательное поле"
                    value=<?php if (isset($_SESSION['tempFieldOne'])) echo $_SESSION['tempFieldOne'];
-                   unset($_SESSION['tempFieldOne']) ?>>
+            unset($_SESSION['tempFieldOne']) ?>>
             <?php
             if (isset($_SESSION['statusFieldOne']))
                 if (!$_SESSION['statusFieldOne']): unset($_SESSION['statusFieldOne']) ?>
                     <img class="requireImgName" src="img/required%20field.png" alt="required">
                 <?php endif ?>
         </div>
-        <h2 >Email:</h2>
+        <h2>Email:</h2>
         <input class="email" type="text" maxlength="30" title="обязательное поле">
         <div class="inputContainer">
-            <textarea name="textarea" maxlength="1000" cols="30" rows="10"  ><?php  if (isset($_SESSION['tempFieldTwo'])) echo $_SESSION['tempFieldTwo'];   unset($_SESSION['tempFieldTwo'])?></textarea>
+            <textarea name="textarea" maxlength="1000" cols="30"
+                      rows="10"><?php if (isset($_SESSION['tempFieldTwo'])) echo $_SESSION['tempFieldTwo'];
+                unset($_SESSION['tempFieldTwo']) ?></textarea>
             <?php
             if (isset($_SESSION['statusFieldTwo']))
                 if (!$_SESSION['statusFieldTwo']): unset($_SESSION['statusFieldTwo']) ?>
@@ -51,12 +53,14 @@
 
 <div class="comments">
     <div class="counter"><h2>Comments: 0</h2></div>
-
     <?php
+
     use php\classes\Form;
     use php\classes\Data;
     use php\classes\Messages;
-    function autoload($class){
+
+    function autoload($class)
+    {
         $file = __DIR__ . "/{$class}.php";
         if (file_exists($file)) {
             require_once "$file";
@@ -65,24 +69,17 @@
 
     spl_autoload_register("autoload");
 
-    require_once("php/functions.php");
     $form = new Form();
-    $messages = new Messages( __DIR__ . "/data/data.txt");
-    if ($form->checkForm()){
+    $messages = new Messages(__DIR__ . "/data/data.txt");
+    if ($form->checkForm()) {
         $messages->addMessage($form->getMessage());
     }
 
-
-
-
-
     ?>
     <ul class="list">
-
         <?php
         $messages->displayMessages();
         ?>
-
     </ul>
 </div>
 
