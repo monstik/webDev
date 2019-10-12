@@ -53,9 +53,25 @@
     <div class="counter"><h2>Comments: 0</h2></div>
 
     <?php
-    require_once("php/functions.php");
+    use php\classes\Form;
+    use php\classes\Data;
+    use php\classes\Messages;
+    function autoload($class){
+        $file = __DIR__ . "/{$class}.php";
+        if (file_exists($file)) {
+            require_once "$file";
+        }
+    }
 
-   checkForm("data/data.txt");
+    spl_autoload_register("autoload");
+
+    require_once("php/functions.php");
+    $form = new Form();
+    $messages = new Messages( __DIR__ . "/data/data.txt");
+    if ($form->checkForm()){
+        $messages->addMessage($form->getMessage());
+    }
+
 
 
 
@@ -64,7 +80,7 @@
     <ul class="list">
 
         <?php
-        displayMessages( readData("data/data.txt"));
+        $messages->displayMessages();
         ?>
 
     </ul>
