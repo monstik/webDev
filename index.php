@@ -54,7 +54,8 @@
 
     <?php
     use php\classes\Form;
-
+    use php\classes\Data;
+    use php\classes\Messages;
     function autoload($class){
         $file = __DIR__ . "/{$class}.php";
         if (file_exists($file)) {
@@ -65,12 +66,12 @@
     spl_autoload_register("autoload");
 
     require_once("php/functions.php");
-    $Test = new Form();
-    if ($Test->checkForm()){
-        file_put_contents("data/data.txt", "{$Test->getMessage()}", FILE_APPEND);
-
+    $form = new Form();
+    $messages = new Messages( __DIR__ . "/data/data.txt");
+    if ($form->checkForm()){
+        $messages->addMessage($form->getMessage());
     }
-  // checkForm("data/data.txt");
+
 
 
 
@@ -79,7 +80,7 @@
     <ul class="list">
 
         <?php
-        displayMessages( readData("data/data.txt"));
+        $messages->displayMessages();
         ?>
 
     </ul>

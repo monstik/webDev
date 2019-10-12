@@ -16,7 +16,8 @@ class Data
 
     public function __construct($fileName)
     {
-        $this->fileName;
+        $this->fileName = $fileName;
+
     }
 
 
@@ -35,8 +36,9 @@ class Data
         array_pop($tempData);
 
         foreach ($tempData as $datum) {
-            $this->messages = mb_split("===", $datum);
+            $this->messages[] = mb_split("===", $datum);
         }
+
         return $this->messages;
     }
 
